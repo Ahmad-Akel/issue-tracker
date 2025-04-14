@@ -12,10 +12,10 @@ export const NavBar = () => {
     { label: "Dashboard", href: "/" },
     { label: "Issues", href: "/issues" },
   ];
-  console.log(pathName);
+
   return (
-    <nav className="flex space-x-6 mb-5 border-b px-5 h-14 items-center">
-      <Link href="/">
+    <nav className="flex space-x-6 mb-5 border-b px-5 h-14 items-center bg-white dark:bg-zinc-800">
+      <Link href="/" className="text-2xl text-zinc-700 dark:text-zinc-300">
         <AiFillBug />
       </Link>
       <ul className="flex space-x-6">
@@ -24,9 +24,11 @@ export const NavBar = () => {
             key={link.href}
             href={link.href}
             className={classnames({
-              "text-zinc-50": link.href === pathName,
-              "text-zinc-400": link.href !== pathName,
-              "hover:text-zinc-500": true,
+              "font-medium text-zinc-900 dark:text-white":
+                link.href === pathName,
+              "text-zinc-500 dark:text-zinc-400": link.href !== pathName,
+              "hover:text-zinc-800 dark:hover:text-zinc-300 transition-colors":
+                true,
             })}
           >
             {link.label}

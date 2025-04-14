@@ -1,3 +1,9 @@
+import { Button } from "@radix-ui/themes";
+
 export default function Home() {
-  return <div>issue tracker</div>;
+  return (
+    <div>
+      <Button>New Issue</Button>
+    </div>
+  );
 }
